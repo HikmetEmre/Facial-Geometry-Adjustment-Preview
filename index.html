@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Face Reshape MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- MediaPipe FaceMesh -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+</head>
+<body>
+
+<main class="wrap">
+
+  <h1>Facial Geometry Preview Tool</h1>
+  <p class="subtitle">
+    Interactive, landmark-based facial adjustments for visual demonstration.
+
+
+  <!-- NEW: layout wrapper -->
+  <div class="layout">
+
+    <!-- LEFT CONTROLS -->
+    <aside class="controls">
+
+        <!-- TOP: FILE / CAMERA / ACTIONS -->
+        <input id="fileInput" type="file" accept="image/*" />
+      
+        <button id="startCamBtn">Start Camera</button>
+        <button id="captureBtn" disabled>Capture Frame</button>
+        <button id="clearBtn">Clear</button>
+      
+        <button onclick="toggleBeforeAfter()">Before / After</button>
+        <button class="primary" onclick="readyToProcess()">Ready to Process</button>
+        <hr />
+      
+        <!-- UNDER: PRESETS -->
+        <h3>• Chin</h3>
+        <div class="btn-group">
+          <button onclick="setChin('small')">Small</button>
+          <button onclick="setChin('medium')">Medium</button>
+          <button onclick="setChin('large')">Large</button>
+        </div>
+      
+        <h3>• Nose</h3>
+        <div class="btn-group">
+          <button onclick="setNose('small')">Small</button>
+          <button onclick="setNose('medium')">Medium</button>
+          <button onclick="setNose('large')">Large</button>
+        </div>
+        <h3>• Nose Bridge</h3>
+        <div class="btn-group">
+          <button onclick="setNoseBridge('small')">Small</button>
+          <button onclick="setNoseBridge('medium')">Medium</button>
+          <button onclick="setNoseBridge('large')">Large</button>
+        </div>
+        
+      </aside>
+      
+      
+    <!-- IMAGE STAGE -->
+    <section class="stage">
+      <canvas id="imgCanvas"></canvas>
+      <canvas id="overlayCanvas"></canvas>
+      <video id="video" playsinline style="display:none;"></video>
+    </section>
+  
+  </div>
+  
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

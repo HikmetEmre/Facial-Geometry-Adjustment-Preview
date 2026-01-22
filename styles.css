@@ -1,0 +1,185 @@
+/* styles.css */
+
+/* ===== LAYOUT (UNCHANGED) ===== */
+.layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 16px;
+  }
+  
+  /* ===== LEFT PANEL ===== */
+  .controls {
+    padding: 16px;
+    border-right: 1px solid #e5e7eb;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  
+    height: 78vh;
+  
+    /* NEW – visual only */
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+  
+  .controls-top {
+    order: 1;
+  }
+  
+  .controls-bottom {
+    order: 2;
+    margin-top: 4px; /* 🔑 unchanged */
+  }
+  
+  /* ===== BUTTON GROUPS ===== */
+  .btn-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  /* ===== BUTTONS ===== */
+  .controls button {
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #f8fafc;
+    color: #0f172a;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.15s ease, transform 0.12s ease;
+  }
+  
+  .controls button:hover {
+    background: #eef2f7;
+  }
+  
+  .controls button:active {
+    transform: scale(0.97);
+  }
+  
+  /* Primary action */
+  .controls button.primary {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .controls button.primary:hover {
+    background: #1d4ed8;
+  }
+  
+  /* ===== TEXT ===== */
+  .subtitle {
+    margin: 4px 0 20px;
+    font-size: 15px;
+    color: #0f172a;;
+  }
+  
+  .controls h3 {
+    margin: 8px 0 6px;
+    font-size: 14px;          /* was 12px */
+    font-weight: 700;         /* stronger */
+    color: #0f172a;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  
+  /* ===== STAGE (UNCHANGED STRUCTURE) ===== */
+  .stage {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+  
+    /* NEW – visual only */
+    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.10);
+  }
+  
+  .stage canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #overlayCanvas {
+    pointer-events: none;
+  }
+  
+  /* ===== GLOBAL ===== */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #f5f7fb 0%, #eef2f7 100%);
+    color: #0f172a;
+  }
+  
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  h1 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  
+  /* ===== INPUTS & SYSTEM BUTTONS ===== */
+  button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #clearBtn {
+    background: #e5e7eb;
+    color: #0f172a;
+  }
+  
+  #fileInput {
+    padding: 10px;
+    background: #f8fafc;
+    color: #0f172a;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  #startCamBtn {
+    background: #2563eb;
+    color: #ffffff;
+  }
+  
+  #captureBtn {
+    background: #22c55e;
+    color: #ffffff;
+  }
+  
+  #captureBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* ===== FOOTER / HINT ===== */
+  .hint {
+    opacity: 0.75;
+    margin-top: 12px;
+  }
+  
