@@ -1,7 +1,7 @@
 # Facial-Geometry-Adjustment-Preview
 Landmark-based facial adjustment preview tool for visual demonstration purposes. (Chin, Nose, and Nose bridge)
 
-![Preview](Screenshot 2026-01-22 101932.png)
+![Preview](main/preview.png)
 
 ## Features
 - Chin size presets (Small / Medium / Large)
